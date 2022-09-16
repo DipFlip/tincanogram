@@ -3,9 +3,9 @@ import socket
 s = socket.socket()
 s.connect(('127.0.0.1',12345))
 while True:
-    str = raw_input("S: ")
+    str = input("S: ")
     s.send(str.encode());
     if(str == "Bye" or str == "bye"):
         break
-    print "N:",s.recv(1024).decode()
+    print(f"N:{s.recv(1024).decode()}")
 s.close()
